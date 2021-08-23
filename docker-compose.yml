@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  todo-list-server:
+    image: todo-list-server
+    container_name: todo-list-server
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    env_file:
+      - ./server/.env
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3001:3001
+
+  todo-list-client:
+    image: todo-list-client
+    container_name: todo-list-client
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+    env_file: ./client/.env
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
+    depends_on: 
+      - todo-list-server
