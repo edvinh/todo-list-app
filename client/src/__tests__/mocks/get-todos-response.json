@@ -1,0 +1,47 @@
+{
+  "todos": [
+    {
+      "title": "todo 1",
+      "description": "todo description",
+      "done": false,
+      "dueDate": 1629397673217,
+      "id": "dcde8c73-1ba9-4349-b6bc-229ac2dd2b98"
+    },
+    {
+      "title": "todo 2",
+      "description": "todo description",
+      "done": false,
+      "dueDate": 1629397673217,
+      "id": "b8d209ed-b932-4165-8f65-94f1096a018c"
+    },
+    {
+      "title": "todo 3",
+      "description": "todo description",
+      "done": false,
+      "dueDate": 1629397673217,
+      "id": "263972cc-c8f4-4470-bb85-c306534c676c"
+    },
+    {
+      "title": "todo 4",
+      "description": "todo description",
+      "done": false,
+      "dueDate": 1629397673219,
+      "id": "021f6927-2417-4cdb-a858-e70e653ec230"
+    },
+    {
+      "title": "todo 5",
+      "description": "todo description",
+      "done": true,
+      "dueDate": 1629397673219,
+      "id": "29955251-1545-4ddc-9450-7e0c014b4907"
+    }
+  ],
+  "metadata": { "done": 17, "active": 5 },
+  "pageInfo": {
+    "count": 22,
+    "total": 22,
+    "hasNextPage": true,
+    "page": 1,
+    "totalPages": 5
+  }
+}
