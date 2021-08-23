@@ -55,7 +55,12 @@ export default function TodoInput({
             onChange={onTitleChange}
             onKeyDown={onKeyDown}
           />
-          <Button loading={isAdding} icon="add" onClick={onAdd}>
+          <Button
+            loading={isAdding}
+            disabled={!todo.title}
+            icon="add"
+            onClick={onAdd}
+          >
             Add
           </Button>
         </ControlGroup>
