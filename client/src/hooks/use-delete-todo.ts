@@ -4,14 +4,6 @@ import { Todo } from '../types'
 import { useFilter } from './use-filter'
 import { GetTodosResponse } from './use-todos'
 
-const deleteTodoQuery = async (todo: Partial<Todo>) => {
-  const res = await fetch(`${TODO_URL}/${todo.id}`, {
-    method: 'DELETE',
-  })
-
-  return res.json()
-}
-
 /**
  * Hook for deleting Todos.
  */
@@ -58,4 +50,12 @@ export default function useDeleteTodo() {
     mutate,
     ...rest,
   }
+}
+
+const deleteTodoQuery = async (todo: Partial<Todo>) => {
+  const res = await fetch(`${TODO_URL}/${todo.id}`, {
+    method: 'DELETE',
+  })
+
+  return res.json()
 }

@@ -4,20 +4,6 @@ import { Todo } from '../types'
 import { useFilter } from './use-filter'
 import { GetTodosResponse } from './use-todos'
 
-const updateTodoQuery = async (todo: Partial<Todo>) => {
-  const res = await fetch(`${TODO_URL}/${todo.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      ...todo,
-    }),
-  })
-
-  return res.json()
-}
-
 /**
  * Hook for updating Todos.
  */
@@ -62,4 +48,18 @@ export default function useUpdateTodo() {
     mutate,
     ...rest,
   }
+}
+
+const updateTodoQuery = async (todo: Partial<Todo>) => {
+  const res = await fetch(`${TODO_URL}/${todo.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      ...todo,
+    }),
+  })
+
+  return res.json()
 }

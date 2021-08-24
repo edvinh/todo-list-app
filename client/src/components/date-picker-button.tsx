@@ -29,22 +29,10 @@ const now = new Date()
 const shortcuts: DatePickerShortcut[] = [
   { date: endOfTomorrow(), label: 'Today' },
   { date: add(endOfTomorrow(), { days: 1 }), label: 'Tomorrow' },
-  {
-    date: endOfWeek(now),
-    label: 'This Week',
-  },
-  {
-    date: add(endOfWeek(now), { weeks: 1 }),
-    label: 'Next Week',
-  },
-  {
-    date: endOfMonth(now),
-    label: 'This Month',
-  },
-  {
-    date: add(endOfMonth(now), { months: 1 }),
-    label: 'Next Month',
-  },
+  { date: endOfWeek(now), label: 'This Week' },
+  { date: add(endOfWeek(now), { weeks: 1 }), label: 'Next Week' },
+  { date: endOfMonth(now), label: 'This Month' },
+  { date: add(endOfMonth(now), { months: 1 }), label: 'Next Month' },
 ]
 
 export default function DatePickerButton({
