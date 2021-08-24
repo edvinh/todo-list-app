@@ -1,17 +1,19 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 import express from 'express'
 import cors from 'cors'
-import { PORT, FRONTEND_URL } from './constants'
-
+import { PORT, CLIENT_URL } from './constants'
 import todosRouter from './routes/todos'
 import TodosService from './services/todos-service'
 
-// Optional seed for intial mock data
+// Optional seed for initial mock data
 // import mockTodos from './seeds/todos-seed'
 
 const app = express()
 
 const corsOptions = {
-  origin: FRONTEND_URL,
+  origin: CLIENT_URL,
 }
 
 app.use(express.json())
