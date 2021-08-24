@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import {
   ControlGroup,
@@ -34,12 +34,15 @@ export default function TodoInput({
   todo,
 }: Props) {
   const [addNotes, setAddNotes] = useState(false)
+  const todoInputRef = useRef<HTMLInputElement>(null)
 
-  const todosCompletedText = done && total && `${done}/${total} todos completed`
+  const todosCompletedText =
+    (done || total) && `${done || 0}/${total || 0} todos completed`
 
   const onKeyDown = (evt: React.KeyboardEvent) => {
-    if (evt.key === 'Enter') {
+    if (evt.key === 'Enter' && todo.title) {
       onAdd()
+      todoInputRef.current?.focus()
     }
   }
 
@@ -48,12 +51,12 @@ export default function TodoInput({
       <Content>
         <ControlGroup fill>
           <InputGroup
-            disabled={isAdding}
             placeholder="Add Todo..."
             fill
             value={todo.title || ''}
             onChange={onTitleChange}
             onKeyDown={onKeyDown}
+            inputRef={todoInputRef}
           />
           <Button
             loading={isAdding}
